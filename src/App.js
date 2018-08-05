@@ -5,26 +5,33 @@ import Title from "./components/Title";
 import friends from "./friends.json";
 import "./App.css";
 
+
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
     friends,
     score: 0,
-    highscore: 0
+    highscore: 0,
+    game:"Click to begin",
+    correct:"You guessed correct",
+    incorrect:"You guessed wrong"
   };
 
   gameOver = () => {
     if (this.state.score > this.state.highscore) {
-      this.setState({ highscore: this.state.score }, function () {
+      this.setState({ game:this.state.incorrect,highscore: this.state.score }, function () {
         console.log(this.state.highscore);
       });
     }
     this.state.friends.forEach(friend => {
       friend.count = 0;
     });
+    
     alert(`Game Over :( \nscore: ${this.state.score}`);
+
     this.setState({ score: 0 });
     return true;
+    
   }
 
   shuffleFriend = id => {
@@ -34,7 +41,7 @@ class App extends Component {
         if(friends[i].count === 0){
           
           friends[i].count = friends[i].count + 1;
-          this.setState({score : this.state.score + 1}, function(){
+          this.setState({game:this.state.correct,score : this.state.score + 1}, function(){
             console.log(this.state.score);
           });
           this.state.friends.sort(() => Math.random() - 0.5)
@@ -54,7 +61,7 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Title score={this.state.score} highscore={this.state.highscore}>Clicky Game</Title>
+        <Title game={this.state.game}score={this.state.score} highscore={this.state.highscore}>Clicky Game</Title>
 
         <div className="jumbotron">
           <h1 className="display-4">Clicky Game !!</h1>

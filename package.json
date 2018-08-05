@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "npm":"5.6.0",
-    "node":"v8.9.4"
+    "npm": "5.6.0",
+    "node": "v8.9.4"
   },
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "reshake": "^1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

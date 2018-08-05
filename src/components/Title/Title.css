@@ -1,10 +1,14 @@
-.header {
+.navbar {
   width: 100%;
   font-size: 2rem;
   color: white;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   background-color: blueviolet;
   height: 75px;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  border-radius: 10px
   
 }
 
@@ -15,3 +19,4 @@
 .scores {
   float: right;
 }
+
