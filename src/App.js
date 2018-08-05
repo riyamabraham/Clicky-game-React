@@ -27,7 +27,7 @@ class App extends Component {
       friend.count = 0;
     });
     
-    alert(`Game Over :( \nscore: ${this.state.score}`);
+    alert(`Game Over !!!!! \nscore: ${this.state.score}`);
 
     this.setState({ score: 0 });
     return true;
@@ -39,7 +39,7 @@ class App extends Component {
       if (o.id === id) {
         console.log(friends[i].count);
         if(friends[i].count === 0){
-          
+      
           friends[i].count = friends[i].count + 1;
           this.setState({game:this.state.correct,score : this.state.score + 1}, function(){
             console.log(this.state.score);
